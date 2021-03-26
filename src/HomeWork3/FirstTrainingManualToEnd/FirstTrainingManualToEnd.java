@@ -324,9 +324,17 @@ public class FirstTrainingManualToEnd {
 //                    twoDim[indexI][indexJ] = 1;
 //                }
 
+
             }
         }
-        System.out.println(Arrays.deepToString(twoDim));
+//        не бабочка  а крееест
+        for (int indexI = 0; indexI < twoDim.length; indexI++) {
+            for (int indexJ = 0; indexJ < twoDim[indexI].length; indexJ++) {
+                System.out.print(twoDim[indexI][indexJ] + " ");
+            }
+            System.out.println();
+        }
+//        System.out.println(Arrays.deepToString(twoDim));
 //        int i, j;
 //
 //
