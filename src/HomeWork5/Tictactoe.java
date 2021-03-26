@@ -36,105 +36,108 @@ public class Tictactoe {
         Scanner scanner1 = new Scanner(System.in);
 
         System.out.println("Ввидите 1 ( = х ) или 0 :");
-        choiceGame = (char) scanner1.nextInt();
-        do {
+
+        while (true){
+            choiceGame = (char) scanner1.nextInt();
             switch (choice) {
                 case '1':
                     switch (choiceGame) {
                         case '1':
                             game[0][0] = 'x';
-                            continue;
+                            break;
                         case '0':
                             game[0][0] = '0';
-                            continue;
+                            break;
                     }
+                    System.out.println("Ввидите цыфру ");
                     continue;
                 case '2':
                     switch (choiceGame) {
                         case '1':
                             game[0][1] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[0][1] = '0';
-                            break;
+                            continue;
                     }
-                   break;
+                    continue;
                 case '3':
                     switch (choiceGame) {
                         case '1':
                             game[0][2] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[0][2] = '0';
-                            break;
+                            continue;
                     }
-                    break;
+                    continue;
                 case '4':
                     switch (choiceGame) {
                         case '1':
                             game[1][0] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[1][0] = '0';
-                            break;
+                            continue;
                     }
-                    break;
+                    continue;
                 case '5':
                     switch (choiceGame) {
                         case '1':
                             game[1][1] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[1][1] = '0';
-                            break;
+                            continue;
                     }
-                    break;
+                    continue;
                 case '6':
                     switch (choiceGame) {
                         case '1':
                             game[1][2] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[1][2] = '0';
-                            break;
+                            continue;
                     }
-                    break;
+                    continue;
                 case '7':
                     switch (choiceGame) {
                         case '1':
                             game[2][0] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[2][0] = '0';
-                            break;
+                            continue;
                     }
-                    break;
+                    continue;
                 case '8':
                     switch (choiceGame) {
                         case '1':
                             game[2][1] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[2][1] = '0';
-                            break;
+                            continue;
                     }
-                   break;
+                    continue;
                 case '9':
                     switch (choiceGame) {
                         case '1':
                             game[2][2] = 'x';
-                            break;
+                            continue;
                         case '0':
                             game[2][2] = '0';
-                            break;
+                            continue;
                     }
+                    continue;
+                default:
+                    System.out.println("Игра закончена....");
                     break;
-//                default:
-//                    System.out.println("Игра закончена....");
-//                    break;
             }
+            System.out.println();
 
-        }while (choice > 10);
+        }
 
 
     }
