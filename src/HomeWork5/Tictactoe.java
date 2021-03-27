@@ -23,8 +23,9 @@ public class Tictactoe extends Position {
             System.out.println();
         }
         int choice;
-//        char[][] game = new char[a][b];
-        int choiceGame;
+
+        char[][] game = new char[a][b];
+
         Scanner scanner = new Scanner(System.in);
 //        do {
             System.out.println("Поиграем в игру :");
@@ -32,153 +33,78 @@ public class Tictactoe extends Position {
             System.out.println("Что бы поставить X или 0\nнужно выбрать нужную цифру");
             System.out.println("Да победит сильнейший!!!!");
             System.out.println("Ввидите цыфру : ");
+
+
             choice = scanner.nextInt();
 //        } while (choice < 1 || choice > 9);
 
+        Scanner scanner1 = new Scanner(System.in);
 
-        System.out.println("Ввидите 1 ( = х ) или 0 :");
-
-    while (true){
-
-        switch (choice){
-            case 1:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set1Position();
-               continue;
-            case 2:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set2Position();
-               continue;
-            case 3:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set3Position();
-                break;
-            case 4:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set4Position();
-                break;
-            case 5:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set5Position();
-                break;
-            case 6:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set6Position();
-                break;
-            case 7:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set7Position();
-                break;
-            case 8:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set8Position();
-                break;
-            case 9:
-                System.out.println("Ввидите 1 ( = х ) или 0 :");
-                set9Position();
-                break;
-            case 10:
-                System.out.println("Результат");
-                massToString();
-                break;
+    do {
+        int gameN = scanner1.nextInt();
+        if (choice == 1) {
+            if (gameN == 1) {
+                game[0][0] = 'x';
+            } else if (gameN == 0) {
+                game[0][0] = '0';
+            }
+        } else if (choice == 2) {
+            if (gameN == 1) {
+                game[0][1] = 'x';
+            } else if (gameN == 0) {
+                game[0][1] = '0';
+            }
+        } else if (choice == 3) {
+            if (gameN == 1) {
+                game[0][2] = 'x';
+            } else if (gameN == 0) {
+                game[0][2] = '0';
+            }
+        } else if (choice == 4) {
+            if (gameN == 1) {
+                game[1][0] = 'x';
+            } else if (gameN == 0) {
+                game[1][0] = '0';
+            }
+        } else if (choice == 5) {
+            if (gameN == 1) {
+                game[1][1] = 'x';
+            } else if (gameN == 0) {
+                game[1][1] = '0';
+            }
+        } else if (choice == 6) {
+            if (gameN == 1) {
+                game[1][2] = 'x';
+            } else if (gameN == 0) {
+                game[1][2] = '0';
+            }
+        } else if (choice == 7) {
+            if (gameN == 1) {
+                game[2][0] = 'x';
+            } else if (gameN == 0) {
+                game[2][0] = '0';
+            }
+        } else if (choice == 8) {
+            if (gameN == 1) {
+                game[2][1] = 'x';
+            } else if (gameN == 0) {
+                game[2][1] = '0';
+            }
+        } else if (choice == 9) {
+            if (gameN == 1) {
+                game[2][2] = 'x';
+            } else if (gameN == 0) {
+                game[2][2] = '0';
+            }
+        } else if (choice == 10) {
+            for (int i = 0; i < a; i++) {
+                for (int j = 0; j < b; j++) {
+                    System.out.print(game[i][j] + " ");
+                }
+                System.out.println();
+            }
         }
-    }
-//        for (;choice < 10;){
-//            if (choice == 1){
-//                System.out.println("Ввидите 1 ( = х ) или 0 :");
-//                set1Position();
-//            }
-//            else if (choice == 2){
-//                set2Position();
-//            }
-//            else if (choice == 3){
-//                set3Position();
-//            }
-//            else if (choice == 4){
-//                set4Position();
-//            }
-//            else if (choice == 5){
-//                set5Position();
-//            }
-//            else if (choice == 6){
-//                set6Position();
-//            }
-//            else if (choice == 7){
-//                set7Position();
-//            }
-//            else if (choice == 8){
-//                set8Position();
-//            }
-//            else if (choice == 9){
-//                set9Position();
-//            }else {
-//                massToString();
-//            }
-//        }
+    }while (choice < 1 || choice >11);
 
-    }
-    public static void set1Position(){
-
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-//        System.out.println("Ввидите 1 ( = х ) или 0 :");
-        set1P(position);
-        System.out.println("Ввидите следующий номер : ");
-    }
-    public static void set2Position(){
-//        System.out.println("Ввидите 1 ( = х ) или 0 :");
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set2P(position);
-        System.out.println("Ввидите следующий номер :");
-    }
-    public static void set3Position(){
-//        System.out.println("Ввидите 1 ( = х ) или 0 :" );
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set3P(position);
-        System.out.println("Ввидите следующий номер :");
-    }
-    public static void set4Position(){
-//        System.out.println("Ввидите 1 ( = х ) или 0 :");
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set4P(position);
-        System.out.println("Ввидите следующий номер :");
-    }
-    public static void set5Position(){
-//        System.out.println("Ввидите 1 ( = х ) или 0 :");
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set5P(position);
-        System.out.println("Ввидите следующий номер :");
-    }
-    public static void set6Position(){
-//        System.out.println("Ввидите 1 ( = х ) или 0 :");
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set6P(position);
-        System.out.println("Ввидите следующий номер :");
-    }
-    public static void set7Position(){
-//        System.out.println("1 or 0 ");
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set7P(position);
-        System.out.println("Ввидите следующий номер :");
-    }
-    public static void set8Position(){
-//        System.out.println("1 or 0 ");
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set8P(position);
-        System.out.println("Ввидите следующий номер :");
-    }
-    public static void set9Position(){
-//        System.out.println("1 or 0 ");
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        set9P(position);
-        System.out.println("Ввидите следующий номер :");
     }
 }
