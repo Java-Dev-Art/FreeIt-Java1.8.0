@@ -45,6 +45,7 @@ public class Tictactoe extends Position {
         if (choice == 1) {
             if (gameN == 1) {
                 game[0][0] = 'x';
+                System.out.println("Выбор сделан");
             } else if (gameN == 0) {
                 game[0][0] = '0';
             }
@@ -104,7 +105,7 @@ public class Tictactoe extends Position {
                 System.out.println();
             }
         }
-    }while (choice < 1 || choice >11);
+    }while (true);
 
     }
 }
