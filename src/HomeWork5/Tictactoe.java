@@ -28,78 +28,83 @@ public class Tictactoe extends Position {
 
         Scanner scanner = new Scanner(System.in);
 
-        do {
-            System.out.println("Поиграем в игру :");
-            System.out.println("Сверху поле дла игры");
-            System.out.println("Что бы поставить X или 0\nнужно выбрать нужную цифру");
-            System.out.println("Да победит сильнейший!!!!");
-            System.out.println("Ввидите цыфру : ");
+
+        System.out.println("Поиграем в игру :");
+        System.out.println("Сверху поле дла игры");
+        System.out.println("Что бы поставить X или 0\nнужно выбрать нужную цифру");
+        System.out.println("Да победит сильнейший!!!!");
+        System.out.println("Ввидите цыфру : ");
 //            System.out.println("Первыми ходят X вторыми 0 ");
-            System.out.println("Всего по три хода ");
-            System.out.println("Нажмити 1 что бы начать");
+        System.out.println("Всего по три хода ");
+        System.out.println("Нажмити 1 что бы начать");
 
 
-            Scanner scanner1 = new Scanner(System.in);
-            choice = scanner1.nextInt();
-        } while (choice < 1 || choice > 9);
-
-        int cGame = scanner.nextInt();
-//        for (;;){
-            if (cGame == 1){
-                if (choice == 1){
-                    game[0][0] = 'x';
-                    return;
-                }else if (choice == 2){
-                    game[0][1] = 'x';
-                }else if (choice == 3){
-                    game[0][2] = 'x';
-                }else if (choice == 4){
-                    game[1][0] = 'x';
-                }else if (choice == 5){
-                    game[1][1] = 'x';
-                }else if (choice == 6){
-                    game[1][2] = 'x';
-                }else if (choice == 7){
-                    game[2][0] = 'x';
-                }else if (choice == 8){
-                    game[2][1] = 'x';
-                }else if (choice == 9){
-                    game[2][2] = 'x';
-                }
-            }else if (cGame == 0){
-                if (choice == 1){
-                    game[0][0] = '0';
-                }else if (choice == 2){
-                    game[0][1] = '0';
-                }else if (choice == 3){
-                    game[0][2] = '0';
-                }else if (choice == 4){
-                    game[1][0] = '0';
-                }else if (choice == 5){
-                    game[1][1] = '0';
-                }else if (choice == 6){
-                    game[1][2] = '0';
-                }else if (choice == 7){
-                    game[2][0] = '0';
-                }else if (choice == 8){
-                    game[2][1] = '0';
-                }else if (choice == 9){
-                    game[2][2] = '0';
-                }
-            }else if (choice == -1){
-                for (int i = 0; i < a; i++) {
-                    for (int j = 0; j < b; j++) {
-                        System.out.print(game[i][j] + " ");
-                    }
-                    System.out.println();
-                }
-//                break;
+        Scanner scanner1 = new Scanner(System.in);
+        choice = scanner1.nextInt();
+        for (int i = 0; i < game.length; i++){
+            if (choice == 1){
+                game[0][0] = 'x';
+                break;
+            }else if (choice == 2){
+                game[0][1] = 'x';
+                break;
+            }else if (choice == 3){
+                game[0][2] = 'x';
+                break;
+            }else if (choice == 4){
+                game[1][0] = 'x';
+                break;
+            }else if (choice == 5){
+                game[1][1] = 'x';
+                break;
+            }else if (choice == 6){
+                game[1][2] = 'x';
+                break;
+            }else if (choice == 7){
+                game[2][0] = 'x';
+                break;
+            }else if (choice == 8){
+                game[2][1] = 'x';
+                break;
+            }else if (choice == 9){
+                game[2][2] = 'x';
+                break;
+            }else if (choice == 10){
+                game[0][0] = '0';
+                break;
+            }else if (choice == 11){
+                game[0][1] = '0';
+                break;
+            }else if (choice == 12){
+                game[0][2] = '0';
+                break;
+            }else if (choice == 13){
+                game[1][0] = '0';
+                break;
+            }else if (choice == 14){
+                game[1][1] = '0';
+                break;
+            }else if (choice == 15){
+                game[1][2] = '0';
+                break;
+            }else if (choice == 16){
+                game[2][0] = '0';
+                return;
+            }else if (choice == 17){
+                game[2][1] = '0';
+                break;
+            }else if (choice == 18) {
+                game[2][2] = '0';
+                break;
             }
 
-//        }
-
-
-
+        }
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                System.out.print(game[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
     }
