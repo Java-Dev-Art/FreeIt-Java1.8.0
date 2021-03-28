@@ -311,33 +311,111 @@ public class OneDimensionalArrays {
         *
         *
         * */
-        System.out.println("TAsk #10");
-        Scanner scanner1 =new Scanner(System.in);
-        int input = scanner1.nextInt();
-        int [] task10Mass;
-        int [] task10MassS;
-        int task10 =1;//Вроде делаю , как надо, но еще не могу полчучить нужного резултьаьа
-        if (input > 3) {
-            task10Mass = new int[input];
-            for (int i = 0; i < task10Mass.length ; i++) {
-                task10Mass[i] = (int) (Math.random() * input);
-                System.out.print(task10Mass[i] + " ");
-                if ((task10Mass[i] % 2) == 0 ) {
-                    System.out.print(task10);
-                    task10++;
-
-                }
-            }
-//            task10MassS = new int[task10];
-//            for (int i = 0; i < task10MassS.length; i++){
-//                if ((task10Mass[i] % 2 )== 0){
-//                    task10MassS[i] = task10Mass[i];
-//                    System.out.print(task10MassS[i] + " ");
+//        System.out.println("TAsk #10");
+//        Scanner scanner1 =new Scanner(System.in);
+//        int input = scanner1.nextInt();
+//        int [] task10Mass;
+//        int [] task10MassS;
+//        int task10 =1;//Вроде делаю , как надо, но еще не могу полчучить нужного резултьаьа
+//        if (input > 3) {
+//            task10Mass = new int[input];
+//            for (int i = 0; i < task10Mass.length ; i++) {
+//                task10Mass[i] = (int) (Math.random() * input);
+//                System.out.print(task10Mass[i] + " ");
+//                if ((task10Mass[i] % 2) == 0 ) {
+//                    System.out.print(task10);
+//                    task10++;
+//
 //                }
 //            }
-        } else {
-            System.out.println("Ввидтье чисто больше 3 ");
+////            task10MassS = new int[task10];
+////            for (int i = 0; i < task10MassS.length; i++){
+////                if ((task10Mass[i] % 2 )== 0){
+////                    task10MassS[i] = task10Mass[i];
+////                    System.out.print(task10MassS[i] + " ");
+////                }
+////            }
+//        } else {
+//            System.out.println("Ввидтье чисто больше 3 ");
+//        }
+
+        System.out.println("Доп задание.");
+        /*
+        *   1) Найти произведение элементов, кратных 3.
+            2) Найти среднее арифметическое элементов с нечетными номерами.
+            3) Найти средне арифметическое элементов массива, превосходящих некоторое
+            число С.
+            4) Найти наименьший нечетный элемент.
+            5) «Сожмите» массив, выбросив из него каждый второй элемент.
+            «Освободившиеся» места массива заполните нулями.
+            6) Проверить, различны ли все элементы массива.
+            7) Подсчитать, сколько раз встречается элемент с заданным значением.
+            8) Найти второй по величине (т.е. следующий по величине за максимальным)
+            элемент в массиве.
+            9) Найти наименьший элемент среди элементов с четными индексами массива
+            10) Найти максимальный элемент в массиве и поменять его местами с нулевым
+            элементом
+        *
+        *
+        * */
+        System.out.println("Доп. дз №1");
+        int [] dopTask1 = new int[20];
+        int dop = 1;
+        int oddNumber = 0;
+        int indexOddNumber = 0;
+        int dopU = 5;
+        int iOddN = 0;
+        int oN = 0;
+
+        for (int i = 1; i < dopTask1.length; i++){
+            dopTask1[i] = i;
+            if (dopTask1[i] % 3 == 0){
+                dop *= dopTask1[i];
+            }
+            if ((i % 2) !=0){
+                oddNumber += dopTask1[i];
+                indexOddNumber++;
+            }
+            if (dopTask1[i] > dopU){
+                oN += dopTask1[i];
+                iOddN++;
+            }
         }
+        int result = oddNumber / indexOddNumber;
+        int resultT = oN / iOddN;
+        System.out.println("Произведение : " + dop);
+        System.out.println(" ");
+        System.out.println("Доп. дз №2");
+        System.out.println("Средне арифмитическое :" + result);
+        System.out.println("");
+        System.out.println("Доп. Дз №3");
+        System.out.println("Средне арифмитическое :" + resultT);
+        System.out.println(" ");
+        System.out.println("4) Найти наименьший нечетный элемент.");
+        int min = dopTask1[0];
+        for (int i = 0; i< dopTask1.length; i++){
+            if (dopTask1[i] < min && (dopTask1[i] % 2) !=0 ){
+                min = dopTask1[i];
+            }
+        }
+        System.out.println("наименьший нечетный элемент = " + min);
+        System.out.println("");
+        System.out.println(" 5) «Сожмите» массив, выбросив из него каждый второй элемент.\n" +
+                "            «Освободившиеся» места массива заполните нулями.");
+        int [] dopTask5 = new int[8];
+        for (int i = 0;i < dopTask5.length; i++){
+            dopTask5 [i] = i;
+            System.out.print(dopTask5[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i<dopTask5.length; i++){
+            if ((i % 2 )!= 0){
+                dopTask5[i] = 0;
+                System.out.print(dopTask5[i] + " ");
+            }
+            System.out.print(dopTask5[i] + " ");
+        }
+
 
 
 
