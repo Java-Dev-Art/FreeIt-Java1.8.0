@@ -1,5 +1,6 @@
 package HomeWork5.OneDimensionalArrays;
 
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -415,6 +416,160 @@ public class OneDimensionalArrays {
             }
             System.out.print(dopTask5[i] + " ");
         }
+        System.out.println(" ");
+        System.out.println(" 6) Проверить, различны ли все элементы массива.");
+        int[] taskD6 = {1,4,5,8};
+        int[] taskD6S = {4,4,7,8};
+        boolean bool ;
+        for (int i = 0; i < taskD6.length; i++){
+            if (taskD6[i] != taskD6S[i]){
+                bool = false;
+                System.out.println("Индекс : " + i + " массива №1 не совпадает с Массивом №2 " + bool);
+            }else {
+                bool = true;
+                System.out.println("Индекс : " + i + " массива совпадает с Массивом №2 " + bool);
+            }
+        }
+        System.out.println(" ");
+        System.out.println(" 7) Подсчитать, сколько раз встречается элемент с заданным значением.");
+        int[] taskD7 ={1,2,2,2,3,4,5,6,7,8,9,};
+        int taskD7Number = 2;
+        int indexD7 = 0;
+      for (int i = 0; i < taskD7.length; i++){
+          if (taskD7[i] == taskD7Number){
+              indexD7++;
+          }
+      }
+    System.out.println(indexD7 + " столько раз встречается элемент в массиве ");
+    System.out.println("");
+    System.out.println("  8) Найти второй по величине (т.е. следующий по величине за максимальным)\n" +
+                "            элемент в массиве.");
+        int [] taskD8 = new int[15];
+        int maxTaskD8 = taskD8[0];
+        int maxTaskD8S = taskD8[0];
+        boolean boolTask8 = false;
+        for (int i = 0; i < taskD8.length; i++){
+            taskD8[i] = i +2;
+            System.out.print(taskD8[i] + " ");
+            if (taskD8[i] > maxTaskD8 ){
+                maxTaskD8 = taskD8[i];
+                if (maxTaskD8 > maxTaskD8S){
+                    maxTaskD8S = maxTaskD8;
+                    if (maxTaskD8S > taskD8[i]){
+                        boolTask8 = true;
+                    }else {
+                        boolTask8 = false;
+                    }
+                }
+            }
+        }
+        System.out.println("");
+        System.out.println("Максимальное значение в масиве : "+ maxTaskD8 + "\nЕсть ли значение больше максимального :" + boolTask8);
+//        System.out.println(maxTaskD8S); ??????????????????????????????????????????????????????/
+        System.out.println("");
+        System.out.println(" 9) Найти наименьший элемент среди элементов с четными индексами массива");
+        int [] task9DMass = new int[10];
+        int minIndex9D = task9DMass[0];
+        for (int i = 1; i < task9DMass.length; i ++){
+            task9DMass[i] = i;
+            System.out.print(task9DMass[i] + " ");
+            if ((i % 2) !=0 ){
+                if (task9DMass[i] < minIndex9D){
+                    minIndex9D = task9DMass[i];
+                }
+
+            }
+        }
+        System.out.println("");
+        System.out.println("наименьший элемет с нечетным индексом : " + minIndex9D);
+        System.out.println(" ");
+        System.out.println("10) Найти максимальный элемент в массиве и поменять его местами с нулевым\n" +
+                "            элементом");
+        int [] taskD10 = new int[15];
+        int maxTaskD10 = taskD8[0];
+        int maxIndex = 0;
+
+
+        boolean boolTask10 = false;
+        for (int i = 0; i < taskD10.length; i++){
+            taskD10[i] = i +2;
+            System.out.print(taskD10[i] + " ");
+            if (taskD10[i] > maxTaskD10 ){
+                maxTaskD10 = taskD10[i];
+                maxIndex++;
+
+            }
+        }
+        System.out.println(" ");
+        for (int i = 0; i < taskD10.length; i ++){
+
+            taskD10[maxIndex] = taskD10[0];
+            System.out.print(taskD10[i] + " ");
+        }
+        System.out.println();
+        /*
+        * Начало всех задач:
+            Создаём квадратную матрицу, размер вводим с клавиатуры. Заполняем
+            случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде
+            матрицы).
+            1) Почитать сумму четных элементов стоящих на главной диагонали.
+            2)Вывести нечетные элементы находящиеся под главной
+            диагональю(включительно).
+            3)Проверить произведение элементов какой диагонали больше.
+            4)Посчитать сумму четных элементов стоящих над побочной диагональю (не
+            включительно)
+            5)Транспонировать матрицу(1 столбец станет 1-й строкой, 2-й столбец - 2-й
+            строкой и т. д.)
+        *
+        * */
+        System.out.println(" Создаём квадратную матрицу, размер вводим с клавиатуры. Заполняем\n" +
+                "            случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде\n" +
+                "            матрицы).");
+        Scanner scanner = new Scanner(System.in);
+        Scanner scanner1 = new Scanner(System.in);
+
+        int input = scanner.nextInt();
+        int input2 = scanner1.nextInt();
+        int sum = 0;
+        int [][] matrix1 = new int[input][input2];
+        for (int i = 0; i < matrix1.length; i++){
+            for (int j = 0; j < matrix1[i].length; j++){
+                matrix1[i][j] = (int) (Math.random() * 50);
+                System.out.print(matrix1[i][j] + " ");
+            }
+            System.out.println();
+
+
+        }
+        System.out.println(" ");
+        System.out.println(" 1) Почитать сумму четных элементов стоящих на главной диагонали.");
+        for (int i = 0; i < matrix1.length && i < matrix1[i].length; i ++){
+            if ((matrix1[i][i] % 2)== 0){
+                sum += matrix1[i][i];
+            }
+        }
+//        Не совсем понимаю, как это сделать
+        System.out.println("Сумма четных элементов по диагонали : " + sum);
+        System.out.println();
+        System.out.println("2. Вывести нечетные элементы находящиеся под главной\n" +
+                "            диагональю(включительно)");
+
+        int sum2 = 0;
+        for (int i = 1; i < matrix1.length && i < matrix1[i].length; i ++){
+            if ((matrix1[i][i] % 2) != 0){
+                sum2 += matrix1[i][i];
+            }
+        }
+        System.out.println(sum2);
+        System.out.println("");
+        System.out.println();
+
+
+
+
+
+
+
 
 
 
