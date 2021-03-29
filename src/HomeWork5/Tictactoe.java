@@ -68,7 +68,7 @@ public class Tictactoe extends Position {
             }
 
             printField(game);
-            if (Arrays.deepToString(game).contains(Integer.toString(choiceGame)) && choiceGame <= 9 && choiceGame > 0) {
+            if ( choiceGame <= 9 && choiceGame > 0) {
                 switch (choiceGame) {
                     case 1:
                         game[0][0] = choice;
