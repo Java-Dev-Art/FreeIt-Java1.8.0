@@ -1,9 +1,15 @@
 package HomeWork5;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tictactoe extends Position {
-    public static void main(String[] args) throws java.util.InputMismatchException {
+    public static boolean boolGame = false;
+    public static void main(String[] args) throws java.util.InputMismatchException, IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 
         int a = 3;
@@ -22,90 +28,124 @@ public class Tictactoe extends Position {
             }
             System.out.println();
         }
-        int choice;
-
-        char[][] game = new char[a][b];
-
-        Scanner scanner = new Scanner(System.in);
+        char choice;
+        char[][] game = {{'1', '2', '3'},
+                {'4', '5', '6'},
+                {'7', '8', '9'}};
 
 
         System.out.println("Поиграем в игру :");
         System.out.println("Сверху поле дла игры");
         System.out.println("Что бы поставить X или 0\nнужно выбрать нужную цифру");
         System.out.println("Да победит сильнейший!!!!");
-        System.out.println("Ввидите цыфру : ");
-//            System.out.println("Первыми ходят X вторыми 0 ");
-        System.out.println("Всего по три хода ");
-        System.out.println("Нажмити 1 что бы начать");
-
-
+        System.out.println("Чтобы начать нажмите 1 ");
+        Scanner scanner = new Scanner(System.in);
+        int fScanner = scanner.nextInt();
+        if (fScanner == 1) {
+            int random = (int) (Math.random() * 2);
+            if (random % 2 == 0) {
+                System.out.println("Игрок №2 ходит первым\n");
+            } else {
+                System.out.println("Игрок №1 ходит первым\n");
+            }
+        } else {
+            System.out.println("Ввидите 1!");
+        }
         Scanner scanner1 = new Scanner(System.in);
-        choice = scanner1.nextInt();
-        for (int i = 0; i < game.length; i++){
-            if (choice == 1){
-                game[0][0] = 'x';
-                break;
-            }else if (choice == 2){
-                game[0][1] = 'x';
-                break;
-            }else if (choice == 3){
-                game[0][2] = 'x';
-                break;
-            }else if (choice == 4){
-                game[1][0] = 'x';
-                break;
-            }else if (choice == 5){
-                game[1][1] = 'x';
-                break;
-            }else if (choice == 6){
-                game[1][2] = 'x';
-                break;
-            }else if (choice == 7){
-                game[2][0] = 'x';
-                break;
-            }else if (choice == 8){
-                game[2][1] = 'x';
-                break;
-            }else if (choice == 9){
-                game[2][2] = 'x';
-                break;
-            }else if (choice == 10){
-                game[0][0] = '0';
-                break;
-            }else if (choice == 11){
-                game[0][1] = '0';
-                break;
-            }else if (choice == 12){
-                game[0][2] = '0';
-                break;
-            }else if (choice == 13){
-                game[1][0] = '0';
-                break;
-            }else if (choice == 14){
-                game[1][1] = '0';
-                break;
-            }else if (choice == 15){
-                game[1][2] = '0';
-                break;
-            }else if (choice == 16){
-                game[2][0] = '0';
-                return;
-            }else if (choice == 17){
-                game[2][1] = '0';
-                break;
-            }else if (choice == 18) {
-                game[2][2] = '0';
-                break;
+        int gameX = 0;
+        int choiceGame;
+
+
+        while (true) {
+            choiceGame = scanner1.nextInt();
+            if (gameX % 2 == 0){
+                choice = 'x';
+                System.out.println("Очередь x");
+            }
+            else{
+                choice = '0';
+                System.out.println("Очередь 0");
             }
 
-        }
-        for (int i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
-                System.out.print(game[i][j] + " ");
+            printField(game);
+            if (Arrays.deepToString(game).contains(Integer.toString(choiceGame)) && choiceGame <= 9 && choiceGame > 0) {
+                switch (choiceGame) {
+                    case 1:
+                        game[0][0] = choice;
+                        break;
+                    case 2:
+                        game[0][1] = choice;
+                        break;
+                    case 3:
+                        game[0][2] = choice;
+                        break;
+                    case 4:
+                        game[1][0] = choice;
+                        break;
+                    case 5:
+                        game[1][1] = choice;
+                        break;
+                    case 6:
+                        game[1][2] = choice;
+                        break;
+                    case 7:
+                        game[2][0] = choice;
+                        break;
+                    case 8:
+                        game[2][1] = choice;
+                        break;
+                    case 9:
+                        game[2][2] = choice;
+                        break;
+                }
+            } else {
+                System.out.println("Введите число из оставшихся на поле!");
+                continue;
+
             }
-            System.out.println();
+
+            checkingForMatch(game);
+
+            if (boolGame) {
+                System.out.println("YOU WIN!!!");
+                printField(game);
+                break;
+            }
+            gameX ++;
+
         }
-
-
     }
+
+
+
+
+//
+    public static void printField (char[][] game) {
+
+    for (int i = 0; i < game.length; i++) {
+        for (int j = 0; j < game[i].length; j++) {
+            if (j != 2)
+                System.out.print(game[i][j] + "|");
+            else System.out.print(game[i][j]);
+        }
+        System.out.println();
+    }
+}
+
+    public static void checkingForMatch (char[][] game ) {
+
+        for (int i = 0; i < game.length; i++) {
+            if (game[i][0] == game[i][1] && game[i][0] == game[i][2] || // сравнение по горизонтали
+                    game[0][i] == game[1][i] && game[0][i] == game[2][i] || // сравнение по вертикали
+                    game[0][0] == game[1][1] && game[0][0] == game[2][2] || // сравнение по
+                    game[2][0] == game[1][1] && game[2][0] == game[0][2]) { // диагоналям
+
+                boolGame = true;
+                break;
+            }
+        }
+    }
+
+
+
 }
