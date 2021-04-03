@@ -7,22 +7,28 @@ public class Genre {
     private String fantasy;
     private String nonFiction;
     private String detectiveStory;
-    public void setEpic(){
+
+    public void setEpic() {
         this.epic = "Epic";
     }
-    public void setNovel(){
+
+    public void setNovel() {
         this.novel = "Novel";
     }
-    public void setPoetry(){
+
+    public void setPoetry() {
         this.poetry = "Poetry";
     }
-    public void setFantasy(){
+
+    public void setFantasy() {
         this.fantasy = "Fantasy";
     }
-    public void setNonFiction(){
+
+    public void setNonFiction() {
         this.nonFiction = "Non - Fiction";
     }
-    public void setDetectiveStory(){
+
+    public void setDetectiveStory() {
         this.detectiveStory = "Detective Story";
     }
 
@@ -49,8 +55,9 @@ public class Genre {
     public String getDetectiveStory() {
         return detectiveStory;
     }
-    public String genreToString(){
-        return "Genre :" + getDetectiveStory() + " " + getEpic() + " " + getFantasy() + " " + getNonFiction() +  " " +
+
+    public String genreToString() {
+        return "Genre :" + getDetectiveStory() + " " + getEpic() + " " + getFantasy() + " " + getNonFiction() + " " +
                 getNovel() + " " + getPoetry();
     }
 }
