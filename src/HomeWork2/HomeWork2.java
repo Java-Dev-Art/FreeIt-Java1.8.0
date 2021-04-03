@@ -150,9 +150,5 @@ public class HomeWork2 {
         } else if (dev > 4 && dev < 11) {
             System.out.println(dev + " програмистов");
         }
-
-
-
     }
-
 }
