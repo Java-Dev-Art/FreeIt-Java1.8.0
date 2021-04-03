@@ -5,7 +5,8 @@ public class Author extends Book{
     private String lastName;
     private int age;
     private String country;
-    public void setAuthor(String name, String lastName, int age,String country){
+
+    public void setAuthor(String name, String lastName, int age, String country) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
@@ -28,10 +29,8 @@ public class Author extends Book{
         return country;
     }
 
-    public String toString(){
+    public String toString() {
         return "Author \nName : " + getName() + "\nLast Name : " + getLastName() + "\nAge : " + getAge() + "\nCountry : " + getCountry()
-                + "\n" + bookToString() + "\n" +genreToString() + "\n**************************" ;
-
-
+                + "\n" + bookToString() + "\n" + genreToString() + "\n**************************";
     }
 }
