@@ -37,15 +37,23 @@ public class ATM {
             this.balance -=takeOff;
             System.out.println("Take your money");
 
-            this.banknote20 = takeOff % 20;
-            this.banknote50 = (takeOff - this.banknote20) / 50;
-            int bank50 = this.banknote50 % 50;
-            this.banknote100 = (this.banknote50 - bank50) / 100;
+            int banknote20 = takeOff % 20;
+            int banknote50 = (takeOff - banknote20) / 50;
+            int bank50 = banknote50 % 50;
+            int banknote100 = (bank50 - bank50) / 100;
+            if (banknote20 > this.banknote20){
 
-            System.out.println("Quantity of banknotes :\nDenomination $100 :" + this.banknote100 +"\nDenomination $ 50 :" +
-                    bank50+ "\nDenomination $ 20 :" + this.banknote20);
+            }
+
+            System.out.println("Quantity of banknotes :\nDenomination $100 :" + banknote100 +"\nDenomination $ 50 :" +
+                    bank50+ "\nDenomination $ 20 :" + banknote20);
             return true;
         }
+    }
+
+    public static void main(String[] args) {
+        ATM atm = new ATM(5,10,4) ;
+        atm.takeOffMoneyATM(1000);
     }
 
 }
