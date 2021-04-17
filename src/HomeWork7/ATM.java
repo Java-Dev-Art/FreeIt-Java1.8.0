@@ -55,6 +55,5 @@ public class ATM {
         ATM atm = new ATM(5,10,4) ;
         atm.takeOffMoneyATM(1000);
     }
-
 }
 

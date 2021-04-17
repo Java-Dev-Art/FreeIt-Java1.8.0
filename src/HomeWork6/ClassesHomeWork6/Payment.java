@@ -3,7 +3,7 @@ package HomeWork6.ClassesHomeWork6;
 public class Payment {
     private int myMoney;
     private boolean accept;
-    private PaymentSystem ps;
+    private Pay pay;
     public void isAccept(){
         accept = true;
     }
@@ -19,7 +19,7 @@ public class Payment {
         this.myMoney = myMoney;
     }
 
-    public class PaymentSystem{
+    public class Pay{
         private String title;
         private int price;
 
@@ -62,11 +62,11 @@ public class Payment {
 
     public static void main(String[] args) {
         Payment payment = new Payment();
-        PaymentSystem ps = payment.new PaymentSystem();
-        ps.pay("ruka",100);
+        Pay pay = payment.new Pay();
+        pay.pay("ruka",100);
         payment.setMyMoney(125);
 
-        ps.acceptPrice();
+        pay.acceptPrice();
         payment.money();
     }
 }

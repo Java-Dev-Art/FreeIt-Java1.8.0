@@ -12,7 +12,7 @@ public class Cargo extends Terrestrial{
     }
 
     public double powerCargo(){
-        return super.power * 0.74;
+        return super.getPower() * 0.74;
     }
     public void carrCargo(int t){
         if (t < CARRYING_CAPACITY){
@@ -25,9 +25,8 @@ public class Cargo extends Terrestrial{
         }
     }
     public String toStringCargo(){
-        return "Марка : " + super.mark + "." + "\nМощность :"  + super.power  + " л.с, " + powerCargo() + " кВ." +
-                "\nМаксимальная скорость : " + super.maxSpeed + "км/ч." + "\nРасход топлива на 100 км : " + super.fuelConsumption + "л. " +
+        return "Марка : " + super.getMark() + "." + "\nМощность :"  + super.getMaxSpeed() + " л.с, " + powerCargo() + " кВ." +
+                "\nМаксимальная скорость : " + super.getMaxSpeed()+ "км/ч." + "\nРасход топлива на 100 км : " + super.getFuelConsumption() + "л. " +
                 "\nМаксимальная грузоподбемность : " + CARRYING_CAPACITY + "тон.";
     }
-
 }

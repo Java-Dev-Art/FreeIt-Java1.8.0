@@ -17,7 +17,7 @@ public class Military extends Aerial {
     }
 
     public double powerMilitary(){
-        return super.power * 0.74;
+        return super.getPower() * 0.74;
     }
 
 
@@ -44,8 +44,8 @@ public class Military extends Aerial {
         }
     }
     public String toStringMilitary(){
-        return "Марка :" + super.mark + "." + "\nМаксимальная скорость :" + super.maxSpeed + "км/ч." +
-                "\nМощность :" + super.power + " л.с , " + powerMilitary() + " кВ." +
+        return "Марка :" + super.getMark() + "." + "\nМаксимальная скорость :" + super.getMaxSpeed() + "км/ч." +
+                "\nМощность :" + super.getPower() + " л.с , " + powerMilitary() + " кВ." +
                 "\nНаличие сиситемы катапультирования :" + isEjectionSystem() + "." +
                 "\nКоличество ракет :" + getNumberOfMissiles();
     }

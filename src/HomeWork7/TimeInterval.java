@@ -13,7 +13,7 @@ public class TimeInterval {
 
     private int sec;
     private int min;
-    private int hour;;
+    private int hour;
 
     public TimeInterval(int sec, int min, int hour) {
         this.sec = sec;

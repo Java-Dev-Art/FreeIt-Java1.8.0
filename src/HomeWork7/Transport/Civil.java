@@ -17,7 +17,7 @@ public class Civil extends Aerial {
         return this.numberOfPassengers;
     }
     public double powerCivil(){
-        return super.power * 0.74;
+        return super.getPower() * 0.74;
     }
     public void tickets(int ticket){
         if (ticket > limitPassenger()){
@@ -29,9 +29,7 @@ public class Civil extends Aerial {
         }
     }
     public String toStringCivil(){
-        return "Марка :" + super.mark + "." + "\nМаксимальная скорость :" + super.maxSpeed + "км/ч." + "\nМощность :" + super.power + " л.с, " + powerCivil() + "кВ." +
+        return "Марка :" + super.getMark() + "." + "\nМаксимальная скорость :" + super.getMaxSpeed() + "км/ч." + "\nМощность :" + super.getPower() + " л.с, " + powerCivil() + "кВ." +
                 "\nЛимит посадочных мест :" + limitPassenger() + "." + "\nНаличие Бизнес Класса :" + this.businessClass;
     }
-
-
 }

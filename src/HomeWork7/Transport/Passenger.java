@@ -1,11 +1,27 @@
 package HomeWork7.Transport;
 
 public class Passenger extends Terrestrial {
-    String carcase;
-    int numberOfPassengers;
+    private String carcase;
+    private int numberOfPassengers;
     private double km;
     private double l;
     private double time;
+
+    public String getCarcase() {
+        return carcase;
+    }
+
+    public void setCarcase(String carcase) {
+        this.carcase = carcase;
+    }
+
+    public int getNumberOfPassengers() {
+        return numberOfPassengers;
+    }
+
+    public void setNumberOfPassengers(int numberOfPassengers) {
+        this.numberOfPassengers = numberOfPassengers;
+    }
 
     public double getKm() {
         return km;
@@ -27,20 +43,20 @@ public class Passenger extends Terrestrial {
 
 
     public double powerPass(){
-        return super.power * 0.74;
+        return super.getPower() * 0.74;
     }
     public void liters(double time){
         this.time = time;
-        this.km = super.maxSpeed * time;
-        this.l = (km /100) * super.fuelConsumption;
+        this.km = super.getMaxSpeed() * time;
+        this.l = (km /100) * super.getFuelConsumption();
     }
     public void litersPass(){
-        System.out.println("За время " + getTime() + " часа, автомобиль " + super.mark +" двигаясь с максимальной скоростью " +
-                super.maxSpeed + " км/ч израсходует " + getL() +" литров топлива");
+        System.out.println("За время " + getTime() + " часа, автомобиль " + super.getMark() +" двигаясь с максимальной скоростью " +
+                super.getMaxSpeed() + " км/ч израсходует " + getL() +" литров топлива");
     }
     public String toStringPass(){
-        return "Марка : " + super.mark + "." + "\nМощность :"  + super.power  + " л.с, " + powerPass() + " кВ." +
-                "\nМаксимальная скорость : " + super.maxSpeed + "км/ч." + "\nРасход топлива на 100 км : " + super.fuelConsumption + "л. " + "\nТип кузова : " + this.carcase + " ." +
+        return "Марка : " + super.getMark()+ "." + "\nМощность :"  + super.getPower()  + " л.с, " + powerPass() + " кВ." +
+                "\nМаксимальная скорость : " + super.getMaxSpeed() + "км/ч." + "\nРасход топлива на 100 км : " + super.getFuelConsumption() + "л. " + "\nТип кузова : " + this.carcase + " ." +
                 "\nКоличество пасажиров : " + this.numberOfPassengers +".";
     }
 }

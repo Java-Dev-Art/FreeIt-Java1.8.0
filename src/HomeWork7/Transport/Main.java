@@ -25,7 +25,5 @@ public class Main {
         military.ejection();
         military.shot(50);
         military.shot(6);
-
-
     }
 }
