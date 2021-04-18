@@ -10,8 +10,6 @@ public class Tictactoe  {
     public static boolean boolGame = false;
     public static void main(String[] args) throws java.util.InputMismatchException, IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-
         int a = 3;
         int b = 3;
         int c = 1;
@@ -116,10 +114,6 @@ public class Tictactoe  {
         }
     }
 
-
-
-
-//
     public static void printField (char[][] game) {
 
     for (int i = 0; i < game.length; i++) {
@@ -145,7 +139,4 @@ public class Tictactoe  {
             }
         }
     }
-
-
-
 }
