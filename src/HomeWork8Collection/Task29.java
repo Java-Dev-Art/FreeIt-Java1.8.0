@@ -29,7 +29,7 @@ public class Task29<T> {
                 my.remove();
                 System.out.println(" Минимальная оценка удалена ");
             } else {
-                System.out.println(" Все оценки больше минимальной ");
+                System.out.println(" Оценка больше минимальной ");
             }
         }
         System.out.print("Оценки >||=" + rang + " :" + getRang());
