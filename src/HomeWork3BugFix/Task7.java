@@ -1,4 +1,4 @@
-package HomeWork3;
+package HomeWork3BugFix;
 
 public class Task7 {
     public static void main(String[] args) {
