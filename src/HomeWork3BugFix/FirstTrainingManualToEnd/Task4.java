@@ -1,4 +1,4 @@
-package HomeWork3.FirstTrainingManualToEnd;
+package HomeWork3BugFix.FirstTrainingManualToEnd;
 
 public class Task4 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package HomeWork3.FirstTrainingManualToEnd;
+package HomeWork3BugFix.FirstTrainingManualToEnd;
 
 import java.util.Arrays;
 
