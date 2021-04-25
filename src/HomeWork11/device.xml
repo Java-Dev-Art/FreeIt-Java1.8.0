@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <complexType name = "Device">
+            <all>
+                <element name = "name" type ="string"/>
+                <element name="id" type="id"/>
+                <element name="origin" type="string"/>
+                <element name="price" type="positiveInteger"/>
+                <complexType name="Configuration">
+                    <all>
+                        <element name="usb" type="boolean"/>
+                        <element name="com" type="boolean"/>
+                        <element name="lpt" type="boolean"/>
+                        <element name="critical" type="boolean"/>
+                    </all>
+                </complexType>
+            </all>
+        </complexType>
