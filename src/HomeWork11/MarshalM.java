@@ -21,7 +21,7 @@ public class MarshalM {
                     this.add(dev);
                 }
             };
-            m.marshal(devices,new FileOutputStream("data/devMarshal.xml"));
+            m.marshal(devices,new FileOutputStream("devMarshal.xml"));
             m.marshal(devices,System.out);
             System.out.println("XML - file was create");
         }catch (FileNotFoundException e){

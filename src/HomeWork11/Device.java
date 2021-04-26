@@ -6,20 +6,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Device", propOrder = {
-        "name",
-        "origin",
-        "price",
-        "configuration"
-})
+@XmlType(name = "Device")
 public class Device {
-    @XmlAttribute(required = true)
+//    @XmlAttribute(required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlElement(required = true)
     private String name;
-    @XmlAttribute(required = false)
+    @XmlElement(required = true)
     private String origin;
-    @XmlAttribute(required =false)
+    @XmlElement(required =false)
     private int price;
     @XmlID
     private String id;
@@ -78,12 +73,7 @@ public class Device {
                 "\n\tOrigin :" + getOrigin();
     }
     @XmlRootElement
-    @XmlType(name = "configuration", propOrder = {
-            "usb",
-            "com",
-            "lpt",
-            "critical"
-    })
+    @XmlType(name = "configuration")
 
     public static class Configuration{
         private boolean usb;
