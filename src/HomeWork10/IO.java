@@ -3,45 +3,49 @@ package HomeWork10;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 
 public class IO {
-    private static LogManager logger ;
+
+    static Logger logger = Logger.getLogger(String.valueOf(IO.class));
+
     public static void main(String[] args) {
-        logger = LogManager.getLogManager();
         Scanner scanner = new Scanner(System.in);
-               String st = scanner.nextLine();
-//        File file = new File(st)
-//        ;
-        File file1 = new File("C:\\Users\\veles\\OneDrive\\Рабочий стол\\HomeWork\\tm.txt");
-        String outSt = "C:\\Users\\veles\\OneDrive\\Рабочий стол\\HomeWork\\hmCopy.txt";
+        String st = scanner.nextLine();
+        logger.info("Resource" + st);
+
+
+        String black = "C:\\Users\\veles\\OneDrive\\Рабочий стол\\HomeWork\\blackList.txt";
+
         FileReader in = null;
         BufferedReader inS = null;
         FileWriter out = null;
         BufferedWriter oytB = null;
+        int blackIndex = 0;
 
         ArrayList<String> strings = new ArrayList<>();
         try {
             in = new FileReader(st);
             inS = new BufferedReader(in);
-//            int a;
             String a = "";
             while ((a = inS.readLine()) != null){
                 String [] str = a.split("\\n");
-                for (String s : str){
-                    strings.add (s);
+
+                for (int i = 0; i< str.length; i++){
+                    if (str[i].contains("Java")){
+                        blackIndex++;
+                        strings.add(str[i].replace("Java","**************"));
+                    }
                 }
-
-                out = new FileWriter(outSt,false);
+                out = new FileWriter(black,true);
                 oytB = new BufferedWriter(out);
-                oytB.write(a);
-
-                System.out.println(a);
+                oytB.write(String.valueOf(strings));
+                oytB.flush();
             }
         }catch (IOException e){
             System.out.println(e);
-//            logger.
+            logger.warning( "Error" +e);
         }finally {
             try {
                 if (inS != null){
@@ -49,10 +53,10 @@ public class IO {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+                logger.warning("Error close " + e);
             }
             try {
                 if (oytB != null){
-                    oytB.flush();
                     oytB.close();
                 }
             } catch (IOException e) {
@@ -60,20 +64,7 @@ public class IO {
             }
         }
         System.out.println("************");
-        strings.stream().forEach(System.out::println);
-        int i = 0;
-        int a = 0;
-        for (String s: strings){
-            i++;
-            System.out.println(s);
-            if (s.contains("}")){
-                a++;
 
-                System.out.println(s.replaceAll("[{}]+","+"));
-            }
-
-        }
-        System.out.println(i);
-        System.out.println(a);
+        System.out.println("Количество запрещеных слов в тексте " + blackIndex);
     }
 }

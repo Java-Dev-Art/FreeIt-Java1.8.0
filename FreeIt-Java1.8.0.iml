@@ -7,5 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="apache-log4j-2.12.1-bin" level="project" />
+    <orderEntry type="library" name="apache-log4j-2.12" level="project" />
   </component>
 </module>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--<!DOCTYPE log4j:configuration SYSTEM"log4j.dtd">-->
-<configuration status="WARN">
+<log4j:configuration status="WARN"
+                     xmlns:log4j="jar://$USER_HOME$/Downloads/apache-log4j-2.12.1-bin.zip!/apache-log4j-2.12.1-bin"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="jar://$USER_HOME$/Downloads/apache-log4j-2.12.1-bin.zip!/apache-log4j-2.12.1-bin ">
     <appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
@@ -20,9 +23,9 @@
     <loggers>
 
         <root level="all">
-            <appender-ref ref="MyFileError" level = "warm"/>
-            <appender-ref ref="MyFileHistory" level = "info"/>
-            <appender-ref ref="MyFileException" level = "error"/>
+            <appender-ref ref="MyFileError" level="warm"/>
+            <appender-ref ref="MyFileHistory" level="info"/>
+            <appender-ref ref="MyFileException" level="error"/>
         </root>
     </loggers>
-</configuration>
+</log4j:configuration>
